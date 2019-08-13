@@ -15,10 +15,10 @@ const reducer = (state, action) => {
         selectedPhoto: state.photos[action.index]
       };
     }
-    case "SET_STATE": {
+    case "SET_STATES": {   
       return {
         ...state,
-        photos: action.object.photos
+        ...action.object
       };
     }
     case "GO_HOME": {
@@ -35,8 +35,8 @@ const reducer = (state, action) => {
 
 const store = createStore(reducer, {
   pokedex: [],
-  photos: [],
-  selectedPhoto: undefined
+  searchBox: [],
+  shownYours: {}
 });
 
 ReactDOM.render(

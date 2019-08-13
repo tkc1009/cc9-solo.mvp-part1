@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "takashi-hosoi-project",
+  "private_key_id": "e9e595898369917d488c01ff47fdb1d42dd11010",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDK1KZdsGWWOaWq\n8tFfM4JsP/KYnI16d6oqRGXwpjN/Kpa3H7mzVXH1rwHbanL68yLh8r0M9RnQpjOp\n3TFNj6mPsFZScIir+xaJM0iRI58vf21BTlp0HvvofBepmHsleMqnLFIBxw7LzGJi\nE94HsztDwN6O5Zx2Ks240t7B3VXdp8HUuoQueMIHL8TrWZofr8XuTMMhpODYgXoB\nubUh7h/roNVOjzErjRWmRu7M/Hjca7nUyPDz3vwVaAQCq/rjss4kOsb47WH5XcPc\nUBV2lMFZWnrv6O4FWav5fpc/oh2q9yZZR0zOLIef4z+rAkhf7kl/a71ZG//+mVzn\nadTqY95LAgMBAAECggEAVx+BeJPZBu6rHSNg0MJI3uOW+nugf77f7njjyrsxOona\nJD2x3/ivUydBpnRygB2o2aIRF3w+gvOpFGkpENZJMKm/YnjpE+pt8y/+ly1UZqwX\nC2qzCtb2QJXw+g2/s8hPUACHFzFgRyT7C4LaJ7eSmNdDIeE51D4tkJqvSVmf1O3C\nzk/dejB6n/7MWzmHqhNeZiCPwKTJkMtAO8ab8fafjuft8gDVUNenavh6a47Jar9O\nsOCR1Ftpu6/2NdQT0e8XVdv0ZWdvaAxYLToerDIcqQvoa1WvagexIYYG5lVCa97l\nD/Q7cxqwz2dNGgvsQweMXfvyLJGnt/GZr+OtXEP24QKBgQDp6vVod/f+nxCFGrR/\n6OWbDMHEgprW2eUMlpsvy7ijoxZ4mvOVCrSSZozsfCrtcJTCuATfEFxaCPaIis/1\nn+8Zm+UtxwgIJhaL6jx0IzlhR9lVfWLDZtyFOm59IqJ5h487Qg3oBddab0PdLgoK\n1SAHRP568iPD+2/czIHanS90qwKBgQDd+mo4bTg1bV/hq16oK4f0WVoWmtCQLhVR\nZSVaW6MtRSOyb4hIQxW4zV7rk2zsrleILYTpCzU0wHFyZPInaZiiOOep3rgo+1ET\nCXyGi6e4c4hKN3ZZi+6Ac7DJ6i4U8FX40vGlytY63KOCQBEthgrMWg/YOIc9OJBH\ng2yqaoL84QKBgF7KxlRleWwHjaxC3C6RdKpWixdVTeYPOtDVH2JJDjPR3UNWl6so\nQXCqeiVDVCoQW1hlNiQm/yXFSBKhHhENlNkt4buhUlHrDWv5qjHuLEyNzzbjrug8\ngNTEjw3KwUi6dIKxC+2goFqXiErTY2JsZ6RKg03TXkcHV5eEkILE+/wtAoGBAIda\nnM6PesjJSr/2mR9+e8Y5fb9u42InV4RsYpx4aEXAdQXnEHjPvz0SraCEItUnceRt\nrS/VT7o85nBUsXvq3dF9VXW1gyIqLMOo8y+vlLPabu6iZx4vP11ALjrQ+wx1iFbT\nedoYlw0JYQKZQmA57fexqxuzTHO+O+v/bZF0pS7BAoGBAJ3P7U82qp/kJdg8m/dc\nq91vjO7Y6zcFuX/qk0dl3q9K5moXZ7M8xFQp34UM9obJStWwOq1y5+5dC4IHa99a\nZal8tMiVijDTyPQp0CkZCi/EfSurmZK4qe2GFCpXIpOClnip/BLZO3MCEudlk7Ml\noCYWAw0szSELUiPtNyHHKGyy\n-----END PRIVATE KEY-----\n",
+  "client_email": "pokemon@takashi-hosoi-project.iam.gserviceaccount.com",
+  "client_id": "114364647851877472940",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/pokemon%40takashi-hosoi-project.iam.gserviceaccount.com"
+}

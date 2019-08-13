@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from "react-redux";
+import config from "./clientconfig";
+import SelectYours from "./SelectYours";
 
 class App extends Component {
   constructor(props) {
@@ -9,56 +11,43 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // return knex("pokedex")
-    // .select()
-    // .then((pokemons) => console.log(pokemons))
-    // .catch((err) => {
-    //   // sanitize known errors
-    //   // TODO
-
-    //   // throw unknown errors
-    //   return Promise.reject(err);
-    // });
+    return fetch(`http://localhost:4000/pokedex`, config.server)
+    .then(res => res.json())
+    .then(pokemons => {
+      console.log("config.server: ", config.server)
+      this.props.setStates({ pokedex: pokemons })
+    });
   }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        {this.props.pokedex.forEach(pokemon => {
+          if(pokemon.id === 1)console.log("GET!!!");
+        })}
+        <SelectYours />
       </div>
     );
   }
 }
 
 const mapDispatchToProps = dispatch => {
-  // return {
-  //   goHome: () => {
-  //     dispatch({
-  //       type: "GO_HOME"
-  //     });
-  //   }
-  // };
+  return {
+    setStates: object => {
+      dispatch({
+        type: "SET_STATES",
+        object: object
+      });
+    }
+  };
 };
 
 const mapStateToProps = state => {
-  // return {
-  //   currentView: state.currentView,
-  //   photos: state.photos,
-  //   selectedPhoto: state.selectedPhoto
-  // };
+  return {
+    pokedex: state.pokedex,
+    searchBox: state.searchBox,
+    shownYours: state.shownYours
+  };
 };
 
 export default connect(
