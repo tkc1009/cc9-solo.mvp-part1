@@ -3,16 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "knex": "^0.19.1",
+    "pg": "^7.12.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.0"
+    "react-redux": "^7.1.0",
+    "react-scripts": "3.1.0",
+    "redux": "^4.0.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "yarn build && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start": "node server/server.js",
+    "prod": "yarn build && yarn start",
+    "migrate": "knex migrate:latest --knexfile ./settings/knexfile.js",
+    "rollback": "knex migrate:rollback --knexfile ./settings/knexfile.js",
+    "seed": "knex seed:run --knexfile ./settings/knexfile.js"
   },
+  "proxy": "http://localhost:4000",
   "eslintConfig": {
     "extends": "react-app"
   },
