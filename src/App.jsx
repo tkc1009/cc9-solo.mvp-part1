@@ -4,6 +4,7 @@ import './App.css';
 import { connect } from "react-redux";
 import config from "./clientconfig";
 import SelectYours from "./SelectYours";
+import SelectOppos from "./SelectOppos";
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class App extends Component {
           if(pokemon.id === 1)console.log("GET!!!");
         })}
         <SelectYours />
+        <SelectOppos />
       </div>
     );
   }
@@ -46,7 +48,10 @@ const mapStateToProps = state => {
   return {
     pokedex: state.pokedex,
     searchBox: state.searchBox,
-    shownYours: state.shownYours
+    shownYours: state.shownYours,
+    shownYoursPic: state.shownYoursPic,
+    shownOppos: state.shownOppos,
+    shownOpposPic: state.shownOpposPic,
   };
 };
 

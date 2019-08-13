@@ -36,7 +36,10 @@ const reducer = (state, action) => {
 const store = createStore(reducer, {
   pokedex: [],
   searchBox: [],
-  shownYours: {}
+  shownYours: {},
+  shownYoursPic: "",
+  shownOppos: {},
+  shownOpposPic: "",
 });
 
 ReactDOM.render(

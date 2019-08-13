@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import config from "./clientconfig";
-import ShowYours from "./ShowYours";
+import ShowOppos from "./ShowOppos";
 
-class SelectYours extends Component {
+class SelectOppos extends Component {
   constructor(props) {
     super(props);
-    this.yoursRef = React.createRef();
+    this.opposRef = React.createRef();
   }
 
   filterSearchBox(e) {
@@ -17,29 +17,29 @@ class SelectYours extends Component {
     this.props.setStates({ searchBox: searchedList });
   }
 
-  showYours(e) {
+  showOppos(e) {
     this.props.setStates({ searchBox: [] });
-    this.yoursRef.current.focus();
-    const shownYours = this.props.pokedex.find((pokemon) => {
-      return pokemon.name_english.toLowerCase().startsWith(this.yoursRef.current.value.toLowerCase()); 
+    this.opposRef.current.focus();
+    const shownOppos = this.props.pokedex.find((pokemon) => {
+      return pokemon.name_english.toLowerCase().startsWith(this.opposRef.current.value.toLowerCase()); 
     });
-    console.log("Yours: ", shownYours);
-    this.props.setStates({ shownYours: shownYours });
-    return fetch(`http://localhost:4000/pokemon/pictures/${shownYours.id}`, config.server)
+    console.log("Oppos: ", shownOppos);
+    this.props.setStates({ shownOppos: shownOppos });
+    return fetch(`http://localhost:4000/pokemon/pictures/${shownOppos.id}`, config.server)
     .then(res => res.json())
     .then(buffers => {
       const typedArray = new Uint8Array(buffers[0].data);
       const pngBlob = new Blob([typedArray], {type: "image/png"});
-      const shownYoursPic = URL.createObjectURL(pngBlob);
-      this.props.setStates({ shownYoursPic: shownYoursPic });
+      const shownOpposPic = URL.createObjectURL(pngBlob);
+      this.props.setStates({ shownOpposPic: shownOpposPic });
     });
   }
 
   render() {
     return (
-      <div className="SelectYours">
-        <input type="text" placeholder="Yours Pokemon ?" ref={this.yoursRef} onChange={(e) => this.filterSearchBox(e)}/>
-        <input type="submit" id="yoursButton" onClick={(e) => this.showYours(e)} />
+      <div className="SelectOppos">
+        <input type="text" placeholder="Oppos Pokemon ?" ref={this.opposRef} onChange={(e) => this.filterSearchBox(e)}/>
+        <input type="submit" id="opposButton" onClick={(e) => this.showOppos(e)} />
         <div>
           {this.props.searchBox.map(pokemon => {
             return (
@@ -47,7 +47,7 @@ class SelectYours extends Component {
             )  
           })}
         </div>
-        {this.props.shownYoursPic !== "" && <ShowYours />}
+        {this.props.shownOpposPic !== "" && <ShowOppos />}
       </div>
     );
   }
@@ -69,11 +69,13 @@ const mapStateToProps = state => {
     pokedex: state.pokedex,
     searchBox: state.searchBox,
     shownYours: state.shownYours,
-    shownYoursPic: state.shownYoursPic
+    shownYoursPic: state.shownYoursPic,
+    shownOppos: state.shownOppos,
+    shownOpposPic: state.shownOpposPic
   };
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SelectYours);
+)(SelectOppos);
