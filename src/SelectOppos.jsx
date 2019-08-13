@@ -71,7 +71,8 @@ const mapStateToProps = state => {
     shownYours: state.shownYours,
     shownYoursPic: state.shownYoursPic,
     shownOppos: state.shownOppos,
-    shownOpposPic: state.shownOpposPic
+    shownOpposPic: state.shownOpposPic,
+    setSkill: state.setSkill,
   };
 };
 

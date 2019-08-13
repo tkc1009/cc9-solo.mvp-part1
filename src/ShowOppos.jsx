@@ -13,6 +13,7 @@ class ShowOppos extends Component {
         <span><b>{this.props.shownOppos.name_english} : </b></span>
         <span><b>{this.props.shownOppos.name_japanese} : </b></span>
         <span><b>{this.props.shownOppos.name_chinese} : </b></span>
+        <span><b> Limited Level 50 </b></span>
         <img className="pic" src={this.props.shownOpposPic}/>
         <div className="bar hp" style={{ width: this.props.shownOppos.hp * 5 || 0, background: "orange" }}>HP : {this.props.shownOppos.hp}</div>
         <div className="bar atk" style={{ width: this.props.shownOppos.atk * 5 || 0, background: "red" }}>Attack : {this.props.shownOppos.atk}</div>
@@ -43,7 +44,8 @@ const mapStateToProps = state => {
     shownYours: state.shownYours,
     shownYoursPic: state.shownYoursPic,
     shownOppos: state.shownOppos,
-    shownOpposPic: state.shownOpposPic
+    shownOpposPic: state.shownOpposPic,
+    setSkill: state.setSkill,
   };
 };
 

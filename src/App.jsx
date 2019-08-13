@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import title from './title.png';
 import './App.css';
 import { connect } from "react-redux";
 import config from "./clientconfig";
 import SelectYours from "./SelectYours";
 import SelectOppos from "./SelectOppos";
+import SelectSkill from "./SelectSkill";
 
 class App extends Component {
   constructor(props) {
@@ -23,11 +24,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <header className="App-header">
+          <img className="title" src={title} />
+        <p><b>
+          YOU CAN SELECT YOURS AND OPPOS POKEMON AND BATTLE !
+        </b></p>
+        </header>
         {this.props.pokedex.forEach(pokemon => {
           if(pokemon.id === 1)console.log("GET!!!");
         })}
         <SelectYours />
         <SelectOppos />
+        {this.props.shownYoursPic !== "" && this.props.shownOpposPic !== "" && <SelectSkill />}
       </div>
     );
   }
@@ -52,6 +60,7 @@ const mapStateToProps = state => {
     shownYoursPic: state.shownYoursPic,
     shownOppos: state.shownOppos,
     shownOpposPic: state.shownOpposPic,
+    setSkill: state.setSkill,
   };
 };
 

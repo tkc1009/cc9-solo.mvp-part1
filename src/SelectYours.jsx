@@ -69,7 +69,10 @@ const mapStateToProps = state => {
     pokedex: state.pokedex,
     searchBox: state.searchBox,
     shownYours: state.shownYours,
-    shownYoursPic: state.shownYoursPic
+    shownYoursPic: state.shownYoursPic,
+    shownOppos: state.shownOppos,
+    shownOpposPic: state.shownOpposPic,
+    setSkill: state.setSkill,
   };
 };
 
