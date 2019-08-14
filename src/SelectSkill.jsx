@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import './Select.css';
 import BattleResult from "./BattleResult";
 
 class SelectSkill extends Component {
@@ -8,34 +9,34 @@ class SelectSkill extends Component {
     this.skillRef = React.createRef();
   }
 
-  // filterSearchBox(e) {
-  //   this.props.setStates({ searchBox: [] });
-  //   const searchedList = this.props.pokedex.filter((pokemon) => {
-  //     return pokemon.name_english.toLowerCase().startsWith(e.target.value.toLowerCase()); 
-  //   });
-  //   this.props.setStates({ searchBox: searchedList });
-  // }
+  filterSearchSkill(e) {
+    this.props.setStates({ searchBox: [] });
+    const searchedList = this.props.skills.filter((skill) => {
+      return skill.power !== null & skill.ename.toLowerCase().startsWith(e.target.value.toLowerCase()); 
+    });
+    this.props.setStates({ searchBox: searchedList });
+  }
 
   setSkill(e) {
     this.props.setStates({ searchBox: [] });
     this.skillRef.current.focus();
-    // const setSkill = this.props.pokedex.find((pokemon) => {
-    //   return pokemon.name_english.toLowerCase().startsWith(this.opposRef.current.value.toLowerCase()); 
-    // });
-    // this.props.setStates({ shownOppos: shownOppos });
+    const setSkill = this.props.skills.find((skill) => {
+      return skill.ename.toLowerCase().startsWith(this.skillRef.current.value.toLowerCase()); 
+    });
+    this.props.setStates({ setSkill: setSkill });
   }
 
   render() {
     return (
       <div className="SelectSkill">
-        <input type="text" placeholder="Which Skill ?" ref={this.moveRef} />
+        <input type="text" placeholder="Which Skill ?" ref={this.skillRef} onChange={(e) => this.filterSearchSkill(e)} />
         <input type="submit" id="skillButton" onClick={(e) => this.setSkill(e)} />
         <div>
-          {/* {this.props.searchBox.map(pokemon => {
+          {this.props.searchBox.map(skill => {
             return (
-              <li key={this.props.pokedex.indexOf(pokemon)}>{pokemon.name_english}</li>
+              <li key={this.props.skills.indexOf(skill)}>{skill.ename}</li>
             )
-          })} */}
+          })}
         </div>
         {this.props.setSkill !== {} && <BattleResult />}
       </div>
@@ -62,6 +63,7 @@ const mapStateToProps = state => {
     shownYoursPic: state.shownYoursPic,
     shownOppos: state.shownOppos,
     shownOpposPic: state.shownOpposPic,
+    skills: state.skills,
     setSkill: state.setSkill,
   };
 };

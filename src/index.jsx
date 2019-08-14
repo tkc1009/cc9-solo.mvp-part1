@@ -40,19 +40,8 @@ const store = createStore(reducer, {
   shownYoursPic: "",
   shownOppos: {},
   shownOpposPic: "",
-  setSkill: {
-    "accuracy": 85, 
-    "category": "特殊", 
-    "cname": "大字爆炎", 
-    "ename": "Fire Blast", 
-    "id": 126, 
-    "jname": "だいもんじ", 
-    "power": 110, 
-    "pp": 5, 
-    "tm": 38, 
-    "type": "Fire"
-},
-
+  skills: [],
+  setSkill: {},
 });
 
 ReactDOM.render(

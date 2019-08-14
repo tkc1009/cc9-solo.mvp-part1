@@ -30,6 +30,16 @@ app.get("/pokedex", async (req, res) => {
     return Promise.reject(err);
   });
 });
+app.get("/skills", async (req, res) => {
+  let pokedex = await knex("skills")
+  .select()
+  .then((skills) => res.send(skills))
+  .catch((err) => {
+    // sanitize known errors
+    // TODO
+    return Promise.reject(err);
+  });
+});
 app.get("/pokemon/pictures/:id", async (req, res) => {
   let picture = await storage
   .bucket(bucketName)

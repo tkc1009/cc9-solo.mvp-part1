@@ -13,11 +13,16 @@ class App extends Component {
   }
 
   componentDidMount() {
-    return fetch(`http://localhost:4000/pokedex`, config.server)
+    fetch(`http://localhost:4000/pokedex`, config.server)
     .then(res => res.json())
     .then(pokemons => {
-      console.log("config.server: ", config.server)
-      this.props.setStates({ pokedex: pokemons })
+      console.log("config.server: ", config.server);
+      this.props.setStates({ pokedex: pokemons });
+    });
+    fetch(`http://localhost:4000/skills`, config.server)
+    .then(res => res.json())
+    .then(skills => {
+      this.props.setStates({ skills: skills })
     });
   }
 
@@ -31,7 +36,10 @@ class App extends Component {
         </b></p>
         </header>
         {this.props.pokedex.forEach(pokemon => {
-          if(pokemon.id === 1)console.log("GET!!!");
+          if(pokemon.id === 1)console.log("POKEMON GET !!!");
+        })}
+        {this.props.skills.forEach(skill => {
+          if(skill.id === 1)console.log("SKILL GET !!!");
         })}
         <SelectYours />
         <SelectOppos />
@@ -60,6 +68,7 @@ const mapStateToProps = state => {
     shownYoursPic: state.shownYoursPic,
     shownOppos: state.shownOppos,
     shownOpposPic: state.shownOpposPic,
+    skills: state.skills,
     setSkill: state.setSkill,
   };
 };

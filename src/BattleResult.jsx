@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import './BattleResult.css';
 
 class BattleResult extends Component {
   constructor(props) {
@@ -46,6 +45,7 @@ const mapStateToProps = state => {
     shownYoursPic: state.shownYoursPic,
     shownOppos: state.shownOppos,
     shownOpposPic: state.shownOpposPic,
+    skills: state.skills,
     setSkill: state.setSkill,
   };
 };
