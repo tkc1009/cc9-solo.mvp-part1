@@ -1,12 +1,26 @@
-This was created during my time as a student at Code Chrysalis.
+![title](https://user-images.githubusercontent.com/50805657/62989291-66216000-be82-11e9-9c5a-1fe86d2312e0.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+(This was created during my time as a student at Code Chrysalis.)
+
+## Special Features
+
+* You can set the 2 battle pokemon !
+
+* You can set the skill !
+
+* You can see the Damage based on their status !
+
+## Required Techniques
+
+![techs](https://user-images.githubusercontent.com/50805657/62989301-691c5080-be82-11e9-86d8-1e8c6bbf440a.png)
+
+(This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).)
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `yarn dev`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,12 +28,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
+### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `yarn build`
 
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -29,7 +43,12 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `yarn start`
+
+Runs the app in the local machine.<br>
+Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
+
+### `yarn eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 

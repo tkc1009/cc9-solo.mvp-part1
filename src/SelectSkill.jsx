@@ -38,7 +38,7 @@ class SelectSkill extends Component {
             )
           })}
         </div>
-        {this.props.setSkill !== {} && <BattleResult />}
+        {Object.keys(this.props.setSkill).length !== 0 && <BattleResult />}
       </div>
     );
   }
