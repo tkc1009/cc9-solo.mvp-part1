@@ -25,7 +25,7 @@ class SelectYours extends Component {
     });
     console.log("Yours: ", shownYours);
     this.props.setStates({ shownYours: shownYours });
-    return fetch(`http://localhost:4000/pokemon/pictures/${shownYours.id}`, config.server)
+    return fetch(`/pokemon/pictures/${shownYours.id}`, config.server)
     .then(res => res.json())
     .then(buffers => {
       const typedArray = new Uint8Array(buffers[0].data);

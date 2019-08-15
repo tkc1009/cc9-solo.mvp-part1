@@ -25,7 +25,7 @@ class SelectOppos extends Component {
     });
     console.log("Oppos: ", shownOppos);
     this.props.setStates({ shownOppos: shownOppos });
-    return fetch(`http://localhost:4000/pokemon/pictures/${shownOppos.id}`, config.server)
+    return fetch(`/pokemon/pictures/${shownOppos.id}`, config.server)
     .then(res => res.json())
     .then(buffers => {
       const typedArray = new Uint8Array(buffers[0].data);
