@@ -13,13 +13,13 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:4000/pokedex`, config.server)
+    fetch(`/pokedex`, config.server)
     .then(res => res.json())
     .then(pokemons => {
       console.log("config.server: ", config.server);
       this.props.setStates({ pokedex: pokemons });
     });
-    fetch(`http://localhost:4000/skills`, config.server)
+    fetch(`/skills`, config.server)
     .then(res => res.json())
     .then(skills => {
       this.props.setStates({ skills: skills })
